@@ -1,0 +1,19 @@
+<%= form_with url:sign_in_path do |f| %>
+
+    <div>
+        <%= f.label :Username %>
+        <%= f.text_field :username %>
+    </div>
+
+    <div>
+        <%= f.label :Password %>
+        <%= f.password_field :password %>
+    </div>
+
+    <div>
+        <%= f.submit "Log-In" %>
+    </div>
+
+<% end %>
+
+<%= link_to "Sign-Up",new_user_path %>

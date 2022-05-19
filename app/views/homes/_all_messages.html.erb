@@ -1,0 +1,7 @@
+<% if !all_messages.nil? %>
+    <% all_messages.each do |message| %>
+        <h6> <%= message.user.username %> : <%= message.body %> </h6>
+    <% end %>
+<% else %>
+    <h6> <%= message.user.username %> : <%= message.body %> </h6>
+<% end %>
