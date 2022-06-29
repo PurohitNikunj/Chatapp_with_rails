@@ -1,0 +1,6 @@
+<% @requests.each do |req| %>
+  <h5> Requested by :- <%= User.find(req.user_id).username %> </h5>
+  <%= button_to "Accept",accept_request_path(req.room_id, req.user_id), class:"btn btn-success", method: :get %>
+  <%= button_to "Reject",reject_request_path(req.room_id, req.user_id), class:"btn btn-danger", method: :get %>
+  <br>
+<% end %>

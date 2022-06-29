@@ -1,0 +1,10 @@
+<% @chat_rooms.each do |chat_room| %>
+  <%= chat_room.name %>
+  <% if Request.pending.where(room_id: chat_room.id).find_by(user_id:current_user.id) %>
+    <p class="link-primary">Pending</p>
+  <% elsif Request.accepted.where(room_id: chat_room.id).find_by(user_id:current_user.id) %>
+    <%= link_to "Enter",chatroom_path(chat_room) %>
+  <% else %>
+    <%= link_to "Join",join_room_path(chat_room) %>
+  <% end %> 
+<% end %>

@@ -12,6 +12,7 @@
   </head>
 
   <body>
+    <%= render 'shared/navbar' %>
     <% if flash[:alert] %>
       <p class="alert alert-danger"> <%= flash[:alert] %> </p>
     <% end %>

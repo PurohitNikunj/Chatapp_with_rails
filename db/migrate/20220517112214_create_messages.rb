@@ -3,6 +3,7 @@ class CreateMessages < ActiveRecord::Migration[7.0]
     create_table :messages do |t|
       t.string :body
       t.belongs_to :user, foreign_key:true, null:false
+      t.belongs_to :chat_room, foreign_key:true, null:false
 
       t.timestamps
     end

@@ -1,0 +1,6 @@
+<% @chat_rooms.each do |room| %>
+  <div>
+    <%= room.name %> 
+    <%= link_to "See-All",see_requests_path(room) %>
+  </div>
+<% end %>

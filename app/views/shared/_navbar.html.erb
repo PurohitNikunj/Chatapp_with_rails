@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <%= link_to "Home",root_path, class:"navbar-brand" %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <%= link_to "Create Room", new_chat_room_path, class:"nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Join Room", chat_rooms_path, class:"nav-link" %>
+      </li>
+      <li class="nav-item">
+        <% if @no_of_requests.present? %>
+          <% if @no_of_requests > 0 %>
+            <%= link_to "Requests".html_safe + "(" + "<span class='badge badge-pill text-danger'>".html_safe + "#{@no_of_requests}" + "</span>".html_safe + ")", owner_path, class:"nav-link" %>
+          <% else %>
+            <%= link_to "Requests", owner_path, class:"nav-link" %>
+          <% end %>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+</nav>
