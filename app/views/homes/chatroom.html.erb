@@ -13,7 +13,7 @@
         <% end %>
             <%= f.label :Body %>
             <%= f.text_field :body %>
-            <%= f.hidden_field :chat_room_id, value:params[:chat_room_id] %>
+            <%= f.hidden_field :chat_room_id, value:params[:room_id], id:'chat_room_id' %>
             <%= f.submit "send" %>
 
     <% end %>
